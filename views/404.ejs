@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>404 Not Found</title>
+  <style>
+    body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+.error-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 0;
+  color: #ff6347; /* Tomato color */
+}
+
+p {
+  font-size: 1.5em;
+  margin-top: 0.2em;
+  color: #666;
+}
+
+/* Simple bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+h1, p {
+  animation: bounce 2s infinite;
+}
+
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>404</h1>
+    <p>Not Found</p>
+  </div>
+</body>
+</html>

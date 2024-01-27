@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="panel">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col col-sm-3 col-xs-12">
+                  <h4 style=" text-align: center;" class="title">Data <span>List</span></h4>
+                </div>
+                <div style="margin-left: 40%;" class="col-sm-9 col-xs-12 text-right">
+                  <div class="btn_group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search"
+                      style="text-align: center"
+                    />
+                    <a href="/addUser" class="btn btn-default"
+                      ><i class="fa fa-sync-alt">+ Add User</i></a
+                    >
+                      <a href="/user/login" class="btn btn-default"
+                      ><i class="fa fa-sync-alt">Login  Now</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Profile pic</th>
+                    <th>User Name</th>
+                    <th>Age</th>
+                    <th>email</th>
+                    <th>Gender</th>
+                    <th>Last Online</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%_ for(i=0; i< allusers.length; i++){%>
+                  <tr>
+                    <td><%=i + 1%></td>
+                    <td>
+                      <img
+                        src="<%=allusers[i].profilePicture%>"
+                        width="100"
+                        alt="" style="border-radius: 50%;"
+                      />
+                    </td>
+                    <td><%=allusers[i].username%></td>
+                    <td><%=allusers[i].age%></td>
+                    <td><%=allusers[i].email%></td>
+                    <td><%=allusers[i].gender%></td>
+                    <td><%=allusers[i].updatedAt%></td>
+
+                    <td>
+                      <ul class="action-list">
+                        <li>
+                          <a href="/update/<%=allusers[i].id%>" data-tip="edit"
+                            ><i class="fa fa-edit"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a
+                            href="/delete/<%=allusers[i].id%>"
+                            data-tip="delete"
+                            ><i class="fa fa-trash"></i
+                          ></a>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <%_}%>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel-footer">
+              <div class="row">
+                <div class="col col-sm-6 col-xs-6">
+                  showing <b>5</b> out of <b>25</b> entries
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                  <ul class="pagination hidden-xs pull-right">
+                    <li><a href="#"></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">></a></li>
+                  </ul>
+                  <ul class="pagination visible-xs pull-right">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
